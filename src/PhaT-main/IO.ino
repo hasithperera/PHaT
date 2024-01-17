@@ -10,15 +10,14 @@ void init_io() {
   pinMode(A3, OUTPUT);
 
   //555 Trigger pin
-  pinMode(7, INPUT);
-  attachInterrupt(digitalPinToInterrupt(7), timer_function, CHANGE);
   count = 0;
+  pinMode(3, INPUT_PULLUP);
+  attachInterrupt(digitalPinToInterrupt(3), timer_function, RISING);
+
 
 }
 
 void timer_function(){
-
-  count++;
-
-  
+    //Serial.println(">");
+    count++;
 }
